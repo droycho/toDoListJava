@@ -14,4 +14,10 @@ public class TaskTest {
     assertEquals("Mow the lawn", myTask.getDescription());
   }
 
+  @Test
+  public void isCompleted_isFalseAfterInstatiation_false(){
+    Task myTask = new Task("Mow the lawn");
+    assertEquals(false, myTask.isCompleted());
+  }
+
 }
