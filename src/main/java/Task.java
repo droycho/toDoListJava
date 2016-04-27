@@ -41,4 +41,12 @@ public class Task{
     return mId;
   }
 
+  public static Task find(int id) {
+    try{
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
+
 }
