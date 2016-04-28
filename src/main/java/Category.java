@@ -27,5 +27,11 @@ public class Category {
     return mId;
   }
 
-
+  public static Category find(int id) {
+    try {
+      return instances.get(id);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
 }

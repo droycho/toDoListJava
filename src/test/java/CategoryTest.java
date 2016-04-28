@@ -40,4 +40,11 @@ public class CategoryTest {
     Category testCategory = new Category("Home");
     assertEquals(0, testCategory.getId());
   }
+
+  @Test
+  public void find_returnsCategoryWithSameId_secondCategory() {
+    Category firstCategory = new Category("Home");
+    Category secondCategory = new Category("Work");
+    assertEquals(Category.find(secondCategory.getId()), secondCategory);
+  }
 }
