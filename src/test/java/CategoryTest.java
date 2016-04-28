@@ -52,4 +52,10 @@ public class CategoryTest {
   public void find_returnsNullWhenNoCategoryFound_null() {
     assertTrue(Category.find(999) == null);
   }
+
+  @Test
+  public void getTasks_initiallyReturnsEmptyList_ArrayList() {
+    Category testCategory = new Category("Home");
+    assertEquals(0, testCategory.getTasks().size());
+  }
 }

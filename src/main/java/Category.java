@@ -4,11 +4,13 @@ public class Category {
   private String mName;
   private static ArrayList<Category> instances = new ArrayList<Category>();
   private int mId;
+  private ArrayList<Task> mTasks;
 
   public Category(String name) {
     mName = name;
     mId = instances.size();
     instances.add(this);
+    mTasks = new ArrayList<Task>();
   }
 
   public String getName() {
@@ -33,5 +35,9 @@ public class Category {
     } catch (IndexOutOfBoundsException e) {
       return null;
     }
+  }
+
+  public ArrayList<Task> getTasks() {
+    return mTasks;
   }
 }
