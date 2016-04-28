@@ -34,4 +34,10 @@ public class CategoryTest {
     Category.clear();
     assertEquals(Category.all().size(), 0);
   }
+
+  @Test
+  public void getId_categoriesInstatiateWithAnId_1() {
+    Category testCategory = new Category("Home");
+    assertEquals(0, testCategory.getId());
+  }
 }
