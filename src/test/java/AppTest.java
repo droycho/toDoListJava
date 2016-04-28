@@ -72,43 +72,19 @@ public class AppTest extends FluentTest {
     click("a", withText("Add a new task"));
     assertThat(pageSource()).contains("Add a task to Shopping");
   }
-//
-//   @Test
-//   public void taskIsDisplayedTest() {
-//     goTo("http://localhost:4567/tasks/new");
-//     fill("#description").with("Mow the lawn");
-//     submit(".btn");
-//     click("a", withText("View tasks"));
-//     assertThat(pageSource()).contains("Mow the lawn");
-//   }
-//
-//
-//   @Test
-//   public void multipleTasksAreDisplayedTest() {
-//     goTo("http://localhost:4567/tasks/new");
-//     fill("#description").with("Mow the lawn");
-//     submit(".btn");
-//     goTo("http://localhost:4567/tasks/new");
-//     fill("#description").with("Buy groceries");
-//     submit(".btn");
-//     click("a", withText("View tasks"));
-//     assertThat(pageSource()).contains("Mow the lawn");
-//     assertThat(pageSource()).contains("Buy groceries");
-//   }
-//
-//   @Test
-//   public void taskShowPageDisplaysDescription(){
-//     goTo("http://localhost:4567/tasks/new");
-//     fill("#description").with("Do the dishes");
-//     submit(".btn");
-//     click("a", withText("View tasks"));
-//     click("a", withText("Do the dishes"));
-//     assertThat(pageSource()).contains("Do the dishes");
-//   }
-//
-//   @Test
-//   public void taskNotFoundMessageShown() {
-//     goTo("http://localhost:4567/tasks/999");
-//     assertThat(pageSource()).contains("Task not found");
-//   }
+
+  @Test
+  public void taskIsAddedAndDisplayed() {
+    goTo("http://localhost:4567/categories/new");
+    fill("#name").with("Banking");
+    submit(".btn");
+    click("a", withText("View categories"));
+    click("a", withText("Banking"));
+    click("a", withText("Add a new task"));
+    fill("#description").with("Deposit paycheck");
+    submit(".btn");
+    click("a", withText("View categories"));
+    click("a", withText("Banking"));
+    assertThat(pageSource()).contains("Deposit paycheck");
+  }
 }
