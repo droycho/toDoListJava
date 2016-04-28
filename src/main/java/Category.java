@@ -40,4 +40,9 @@ public class Category {
   public ArrayList<Task> getTasks() {
     return mTasks;
   }
+
+  public void addTask(Task task) {
+    mTasks.add(task);
+  }
+  
 }
