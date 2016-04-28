@@ -8,8 +8,8 @@ public class Category {
 
   public Category(String name) {
     mName = name;
-    mId = instances.size();
     instances.add(this);
+    mId = instances.size();
     mTasks = new ArrayList<Task>();
   }
 
@@ -31,7 +31,7 @@ public class Category {
 
   public static Category find(int id) {
     try {
-      return instances.get(id);
+      return instances.get(id - 1);
     } catch (IndexOutOfBoundsException e) {
       return null;
     }
