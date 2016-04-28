@@ -27,4 +27,11 @@ public class CategoryTest {
     assertTrue(Category.all().contains(firstCategory));
     assertTrue(Category.all().contains(secondCategory));
   }
+
+  @Test
+  public void clear_emptiesAllCategoriesFromList_0() {
+    Category testCategory = new Category("Home");
+    Category.clear();
+    assertEquals(Category.all().size(), 0);
+  }
 }
