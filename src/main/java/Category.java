@@ -44,5 +44,5 @@ public class Category {
   public void addTask(Task task) {
     mTasks.add(task);
   }
-  
+
 }
